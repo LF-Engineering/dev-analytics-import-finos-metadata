@@ -1,1 +1,0 @@
-45 18 * * * PATH=$PATH:/usr/local/go/bin:/root/go/bin /usr/bin/finos_prod.sh 1>> /tmp/import-finos-metadata-prod.log 2>> /tmp/import-finos-metadata-prod.err

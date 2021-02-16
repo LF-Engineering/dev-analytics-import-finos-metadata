@@ -42,8 +42,9 @@ trap cleanup EXIT
 remove_clones
 git clone "${finos_repo}" || exit 8
 git clone "${da_repo}" || exit 9
-cp dev-analytics-finos-metadata/projects.json ./project.json || exit 10
-cp dev-analytics-api/app/services/lf/bootstrap/fixtures/finos/shared.yaml ./shared.yaml || exit 11
+cp dev-analytics-finos-metadata/projects.json ./projects.json || exit 10
+sed -i '1,3d' ./projects.json || exit 11
+cp dev-analytics-api/app/services/lf/bootstrap/fixtures/finos/shared.yaml ./shared.yaml || exit 12
 remove_clones
 date
 echo 'Running import-metadata'
